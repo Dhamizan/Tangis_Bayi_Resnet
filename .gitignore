@@ -3,5 +3,6 @@
 *.keras
 model_mn2.ipynb
 hasil_mn2/
+hasil_resnet/
 kode/
 work/

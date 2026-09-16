@@ -2,14 +2,15 @@ Validation
 
               precision    recall  f1-score   support
 
-          eh     1.0000    0.8333    0.9091         6
-         heh     0.8571    1.0000    0.9231         6
-         neh     0.8571    1.0000    0.9231         6
-         owh     1.0000    0.8333    0.9091         6
+       eairh     0.0000    0.0000    0.0000         2
+          eh     0.8333    0.8333    0.8333         6
+         heh     0.7500    1.0000    0.8571         6
+         neh     0.8000    0.6667    0.7273         6
+         owh     0.7143    0.8333    0.7692         6
 
-    accuracy                         0.9167        24
-   macro avg     0.9286    0.9167    0.9161        24
-weighted avg     0.9286    0.9167    0.9161        24
+    accuracy                         0.7692        26
+   macro avg     0.6195    0.6667    0.6374        26
+weighted avg     0.7148    0.7692    0.7355        26
 
-Accuracy : 0.9167
-Macro F1 : 0.9161
+Accuracy : 0.7692
+Macro F1 : 0.6374

@@ -11,7 +11,7 @@ Model klasifikasi jenis tangisan bayi dari video, memakai pendekatan **intermedi
 | **Cabang audio** | CNN kecil dilatih dari nol dari mel-spectrogram (grayscale, nilai mentah) |
 | **Titik fusi** | `Concatenate` fitur citra (128-d) + fitur audio (128-d) → 256-d → classifier |
 | **Split** | 3 arah — **test diambil langsung dari folder `data_test_video`** (bukan hasil pecahan acak), sisanya dipecah stratified-group jadi train/val |
-| **Kelas** | `eh` (perlu bersendawa), `heh` (tidak nyaman), `neh` (lapar), `owh` (mengantuk) |
+| **Kelas** | `eairh` (masuk angin), `eh` (perlu bersendawa), `heh` (tidak nyaman), `neh` (lapar), `owh` (mengantuk) |
 | **Metrik** | Accuracy + macro F1 |
 
 ## Dataset & split
@@ -20,26 +20,26 @@ Video dibaca dari `Data_Video_Bayi/<kelas>/{data_train_video, data_test_video}`.
 
 | Split | Jumlah video | Distribusi per kelas |
 |---|---|---|
-| Train | 88 | eh 22 · heh 22 · neh 22 · owh 22 |
-| Valid | 24 | eh 6 · heh 6 · neh 6 · owh 6 |
-| Test  | 28 | eh 7 · heh 7 · neh 7 · owh 7 |
+| Train | 95 | eairh 7 · eh 22 · heh 22 · neh 22 · owh 22 |
+| Valid | 26 | eairh 2 · eh 6 · heh 6 · neh 6 · owh 6 |
+| Test  | 32 | eairh 4 · eh 7 · heh 7 · neh 7 · owh 7 |
 
 ## Arsitektur model
 
 - **Cabang citra**: `ResNet50` (`include_top=False`, `pooling='avg'`, weights ImageNet, **dibekukan**) diterapkan ke 5 frame per video lewat `TimeDistributed`, fitur antar-frame dirata-ratakan (`GlobalAveragePooling1D`) → `LayerNormalization` → `Dense(128, relu)`.
 - **Cabang audio**: 3 blok `Conv2D` (16→32→64 filter) + `MaxPooling2D`, `GlobalAveragePooling2D` → `Dense(128, relu)`.
-- **Fusi**: `Concatenate` kedua fitur (256-d) → `Dropout(0.4)` → `Dense(4, softmax)`.
-- **Parameter**: 299.012 dilatih, 23.587.712 dibekukan (backbone ResNet50, dim fitur 2048).
+- **Fusi**: `Concatenate` kedua fitur (256-d) → `Dropout(0.4)` → `Dense(5, softmax)`.
+- **Parameter**: 299.269 dilatih, 23.587.712 dibekukan (backbone ResNet50, dim fitur 2048).
 
 ## Training
 
 - Optimizer `AdamW` (lr 1e-3, weight decay 0.01), loss `SparseCategoricalCrossentropy`.
 - Callback: `EarlyStopping` (monitor `val_loss`, patience 15, restore best weights), `ModelCheckpoint` (`val_accuracy` terbaik), `ReduceLROnPlateau` (factor 0.5, patience 6).
-- Berhenti otomatis di **epoch 46** (early stopping), bobot dikembalikan ke **epoch 31** (val_loss terendah: 0.1092, val_accuracy 0.9583).
+- Run terbaru memuat **38 epoch**. Akurasi training mencapai 1.000, sedangkan akurasi validation berfluktuasi di kisaran 0.769–0.846; jarak ini menunjukkan model mulai menghafal data training dan performa generalisasinya masih terbatas.
 
 ![Kurva training](results/training_curves.png)
 
-Loss training terus turun mendekati 0 dan akurasi training mencapai 100% jauh sebelum training berhenti, sementara val_loss turun lebih lambat dan val_accuracy stabil di kisaran 0.92–0.96 — pola khas model yang mulai menghafal data train, tapi ditahan oleh early stopping sebelum val_loss benar-benar memburuk.
+Loss training terus turun hingga mendekati 0, tetapi loss validation berhenti membaik di sekitar 0.5–0.6. Pola ini konsisten dengan overfitting: model sangat baik pada data training, namun belum memperoleh performa setara pada data yang tidak dilihat saat training.
 
 ## Hasil evaluasi
 
@@ -49,12 +49,13 @@ Loss training terus turun mendekati 0 dan akurasi training mencapai 100% jauh se
 
 | Kelas | Precision | Recall | F1 | Support |
 |---|---|---|---|---|
-| eh | 1.0000 | 0.8333 | 0.9091 | 6 |
-| heh | 1.0000 | 1.0000 | 1.0000 | 6 |
-| neh | 0.8571 | 1.0000 | 0.9231 | 6 |
-| owh | 1.0000 | 1.0000 | 1.0000 | 6 |
+| eairh | 0.0000 | 0.0000 | 0.0000 | 2 |
+| eh | 0.8333 | 0.8333 | 0.8333 | 6 |
+| heh | 0.7500 | 1.0000 | 0.8571 | 6 |
+| neh | 0.8000 | 0.6667 | 0.7273 | 6 |
+| owh | 0.7143 | 0.8333 | 0.7692 | 6 |
 
-**Accuracy: 0.9583 · Macro F1: 0.9580**
+**Accuracy: 0.7692 · Macro F1: 0.6374**
 
 ### Test set (hasil final)
 
@@ -62,14 +63,15 @@ Loss training terus turun mendekati 0 dan akurasi training mencapai 100% jauh se
 
 | Kelas | Precision | Recall | F1 | Support |
 |---|---|---|---|---|
-| eh | 1.0000 | 1.0000 | 1.0000 | 7 |
-| heh | 0.7000 | 1.0000 | 0.8235 | 7 |
-| neh | 1.0000 | 0.5714 | 0.7273 | 7 |
-| owh | 1.0000 | 1.0000 | 1.0000 | 7 |
+| eairh | 1.0000 | 0.5000 | 0.6667 | 4 |
+| eh | 0.7778 | 1.0000 | 0.8750 | 7 |
+| heh | 0.6364 | 1.0000 | 0.7778 | 7 |
+| neh | 0.8333 | 0.7143 | 0.7692 | 7 |
+| owh | 1.0000 | 0.5714 | 0.7273 | 7 |
 
-**Accuracy: 0.8929 · Macro F1: 0.8877**
+**Accuracy: 0.7812 · Macro F1: 0.7632**
 
-Kesalahan di test set terkonsentrasi di satu pola: 3 dari 7 video kelas **neh** salah diprediksi sebagai **heh** (lihat confusion matrix), sementara kelas `eh`, `heh` (recall), dan `owh` sempurna. Ini titik yang layak diperiksa lebih lanjut — misalnya dengan mendengar ulang video `neh` yang salah klasifikasi, untuk cek apakah polanya memang mirip `heh` secara audio/visual atau ada masalah kualitas data.
+Pada test set, kelas **eairh** salah diprediksi sebagai **heh** pada 2 dari 4 video. Kelas **neh** juga tertukar dengan `eh` dan `heh`, sedangkan kelas **owh** tertukar masing-masing satu kali dengan `eh`, `heh`, dan `neh`. Kelas `eh` dan `heh` memiliki recall sempurna, tetapi precision `heh` masih rendah karena menerima prediksi dari kelas lain. Pola ini menunjukkan bahwa eairh, neh, dan owh masih membutuhkan lebih banyak variasi data atau pemisahan fitur audio-visual yang lebih baik.
 
 ## Struktur folder
 

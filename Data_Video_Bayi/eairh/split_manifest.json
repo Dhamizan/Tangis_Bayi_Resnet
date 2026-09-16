@@ -1,7 +1,7 @@
 {
   "label": "eairh",
   "policy": "provisional_manual_recurring_shot_grouping",
-  "limitation": "DVD source spans train, val and test. Infant identities and overlap with other classes are unverified. Not a source-independent evaluation.",
+  "limitation": "Provisional within-DVD split. Internal validation uses recurring-shot groups, not independent sources. Infant identities and overlap with other classes are unverified.",
   "recurring_shot_groups": [
     [
       "ea_0001",
@@ -32,6 +32,7 @@
       "sha256": "a60e0c9a4af42415a9814bdbc341218af73fbef32322d9fe0bcdb1fa24c870d3",
       "source_group": "dunstan_lesson_two_vts_01_1",
       "label_status": "instructional_section_label",
+      "validation_group": "dvd_shots_ea_0001_ea_0009",
       "split": "train"
     },
     {
@@ -47,6 +48,7 @@
       "sha256": "f238647f883049d518a1b30c1483eaa423a88c1b5deb3ddc86e84f4b45d689f2",
       "source_group": "dunstan_lesson_two_vts_01_1",
       "label_status": "instructional_section_label",
+      "validation_group": "dvd_shots_ea_0002_ea_0008_ea_0013",
       "split": "train"
     },
     {
@@ -60,6 +62,7 @@
       "sha256": "50845aef2caf0c8f1a588e0a49a6b3f46181631d6a6e3b87c5b71374f89746ff",
       "source_group": "dunstan_lesson_two_vts_01_1",
       "label_status": "instructional_section_label",
+      "validation_group": "dvd_shots_ea_0003_ea_0011",
       "split": "train"
     },
     {
@@ -73,6 +76,7 @@
       "sha256": "316c39d9529d0458c9254ca3e89630190f5056026b88b51d8270c4cf954b7100",
       "source_group": "dunstan_lesson_two_vts_01_1",
       "label_status": "instructional_section_label",
+      "validation_group": "dvd_shots_ea_0005",
       "split": "train"
     },
     {
@@ -86,6 +90,7 @@
       "sha256": "b4235ab5eddc8ec1d45c8587b3fc1aebc8e1d34b3807c3fa5eab52c0e1b3fb9a",
       "source_group": "dunstan_lesson_two_vts_01_1",
       "label_status": "instructional_section_label",
+      "validation_group": "dvd_shots_ea_0002_ea_0008_ea_0013",
       "split": "train"
     },
     {
@@ -99,6 +104,7 @@
       "sha256": "0c6981943c319e9436bf730910edf6362da475cff9baad2cb30ed1a541a2093b",
       "source_group": "dunstan_lesson_two_vts_01_1",
       "label_status": "instructional_section_label",
+      "validation_group": "dvd_shots_ea_0001_ea_0009",
       "split": "train"
     },
     {
@@ -112,6 +118,7 @@
       "sha256": "d8a040d9d306a82b4bac64862daeae0a51181ef4144c9917fa7977e5e96701f0",
       "source_group": "dunstan_lesson_two_vts_01_1",
       "label_status": "instructional_section_label",
+      "validation_group": "dvd_shots_ea_0003_ea_0011",
       "split": "train"
     },
     {
@@ -125,6 +132,7 @@
       "sha256": "20ba41f1fa4ae70071e545d4d297ba7d054be9620bdf18d10558ac3d87e10bae",
       "source_group": "dunstan_lesson_two_vts_01_1",
       "label_status": "instructional_section_label",
+      "validation_group": "dvd_shots_ea_0002_ea_0008_ea_0013",
       "split": "train"
     },
     {
@@ -157,35 +165,8 @@
         "Model preprocessing produces finite tensors"
       ],
       "limitations": "Label and original audio authenticity are not independently verified. Source group identifies the supplied upload, not a confirmed infant identity.",
+      "permitted_split": "train",
       "id": "ea_short_AhNLgj4JHU4"
-    },
-    {
-      "id": "ea_0004",
-      "shot": 6,
-      "start": 114.56,
-      "end": 116.44,
-      "path": "eairh/data_val_video/ea_0004.mp4",
-      "duration": 1.88,
-      "audio_rms": 0.060525745153427124,
-      "sha256": "0adfbfd69eb2b50e74242417221ef59c8e6b7dc05320bf99016d0c3854bdfb79",
-      "source_group": "dunstan_lesson_two_vts_01_1",
-      "label_status": "instructional_section_label",
-      "split": "val"
-    },
-    {
-      "id": "ea_0010",
-      "shot": 1,
-      "start": 73.6,
-      "end": 76.08,
-      "crop": "720:384:0:192",
-      "quality": "caption_removed_by_crop",
-      "path": "eairh/data_val_video/ea_0010.mp4",
-      "duration": 2.48,
-      "audio_rms": 0.05448141694068909,
-      "sha256": "5955cee0f57a741b1f0b582d58cfa214cfa8039ce9324935ee905af442ce7068",
-      "source_group": "dunstan_lesson_two_vts_01_1",
-      "label_status": "instructional_section_label",
-      "split": "val"
     },
     {
       "id": "ea_0007",
@@ -198,6 +179,7 @@
       "sha256": "5ffd0185f8e87bbe993ba72877a4f4b92d0eddde449f7c1b4f9e5a8f3e10fe59",
       "source_group": "dunstan_lesson_two_vts_01_1",
       "label_status": "instructional_section_label",
+      "validation_group": "dvd_shots_ea_0007",
       "split": "test"
     },
     {
@@ -211,6 +193,37 @@
       "sha256": "64cbed8f168ec86ff40daa9016e387bd24467933d1207ae9ff68f4de9af0b1b5",
       "source_group": "dunstan_lesson_two_vts_01_1",
       "label_status": "instructional_section_label",
+      "validation_group": "dvd_shots_ea_0012",
+      "split": "test"
+    },
+    {
+      "id": "ea_0004",
+      "shot": 6,
+      "start": 114.56,
+      "end": 116.44,
+      "path": "eairh/data_test_video/ea_0004.mp4",
+      "duration": 1.88,
+      "audio_rms": 0.060525745153427124,
+      "sha256": "0adfbfd69eb2b50e74242417221ef59c8e6b7dc05320bf99016d0c3854bdfb79",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "validation_group": "dvd_shots_ea_0004",
+      "split": "test"
+    },
+    {
+      "id": "ea_0010",
+      "shot": 1,
+      "start": 73.6,
+      "end": 76.08,
+      "crop": "720:384:0:192",
+      "quality": "caption_removed_by_crop",
+      "path": "eairh/data_test_video/ea_0010.mp4",
+      "duration": 2.48,
+      "audio_rms": 0.05448141694068909,
+      "sha256": "5955cee0f57a741b1f0b582d58cfa214cfa8039ce9324935ee905af442ce7068",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "validation_group": "dvd_shots_ea_0010",
       "split": "test"
     }
   ]

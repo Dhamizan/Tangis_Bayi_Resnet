@@ -1,0 +1,217 @@
+{
+  "label": "eairh",
+  "policy": "provisional_manual_recurring_shot_grouping",
+  "limitation": "DVD source spans train, val and test. Infant identities and overlap with other classes are unverified. Not a source-independent evaluation.",
+  "recurring_shot_groups": [
+    [
+      "ea_0001",
+      "ea_0009"
+    ],
+    [
+      "ea_0002",
+      "ea_0008",
+      "ea_0013"
+    ],
+    [
+      "ea_0003",
+      "ea_0011"
+    ]
+  ],
+  "excluded": [
+    "ea_0006"
+  ],
+  "samples": [
+    {
+      "id": "ea_0001",
+      "shot": 2,
+      "start": 76.88,
+      "end": 89.04,
+      "path": "eairh/data_train_video/ea_0001.mp4",
+      "duration": 12.16,
+      "audio_rms": 0.03692818805575371,
+      "sha256": "a60e0c9a4af42415a9814bdbc341218af73fbef32322d9fe0bcdb1fa24c870d3",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "split": "train"
+    },
+    {
+      "id": "ea_0002",
+      "shot": 3,
+      "start": 89.84,
+      "end": 99.76,
+      "crop": "720:400:0:176",
+      "quality": "caption_removed_by_crop",
+      "path": "eairh/data_train_video/ea_0002.mp4",
+      "duration": 9.92,
+      "audio_rms": 0.03496318310499191,
+      "sha256": "f238647f883049d518a1b30c1483eaa423a88c1b5deb3ddc86e84f4b45d689f2",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "split": "train"
+    },
+    {
+      "id": "ea_0003",
+      "shot": 4,
+      "start": 100.6,
+      "end": 110.08,
+      "path": "eairh/data_train_video/ea_0003.mp4",
+      "duration": 9.48,
+      "audio_rms": 0.034275688230991364,
+      "sha256": "50845aef2caf0c8f1a588e0a49a6b3f46181631d6a6e3b87c5b71374f89746ff",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "split": "train"
+    },
+    {
+      "id": "ea_0005",
+      "shot": 7,
+      "start": 117.28,
+      "end": 127.88,
+      "path": "eairh/data_train_video/ea_0005.mp4",
+      "duration": 10.6,
+      "audio_rms": 0.04148448631167412,
+      "sha256": "316c39d9529d0458c9254ca3e89630190f5056026b88b51d8270c4cf954b7100",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "split": "train"
+    },
+    {
+      "id": "ea_0008",
+      "shot": 10,
+      "start": 138.72,
+      "end": 145.52,
+      "path": "eairh/data_train_video/ea_0008.mp4",
+      "duration": 6.8,
+      "audio_rms": 0.04210706055164337,
+      "sha256": "b4235ab5eddc8ec1d45c8587b3fc1aebc8e1d34b3807c3fa5eab52c0e1b3fb9a",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "split": "train"
+    },
+    {
+      "id": "ea_0009",
+      "shot": 13,
+      "start": 153.8,
+      "end": 159.4,
+      "path": "eairh/data_train_video/ea_0009.mp4",
+      "duration": 5.6,
+      "audio_rms": 0.048866525292396545,
+      "sha256": "0c6981943c319e9436bf730910edf6362da475cff9baad2cb30ed1a541a2093b",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "split": "train"
+    },
+    {
+      "id": "ea_0011",
+      "shot": 5,
+      "start": 110.92,
+      "end": 113.64,
+      "path": "eairh/data_train_video/ea_0011.mp4",
+      "duration": 2.72,
+      "audio_rms": 0.04650120437145233,
+      "sha256": "d8a040d9d306a82b4bac64862daeae0a51181ef4144c9917fa7977e5e96701f0",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "split": "train"
+    },
+    {
+      "id": "ea_0013",
+      "shot": 12,
+      "start": 150.56,
+      "end": 152.96,
+      "path": "eairh/data_train_video/ea_0013.mp4",
+      "duration": 2.4,
+      "audio_rms": 0.04637661203742027,
+      "sha256": "20ba41f1fa4ae70071e545d4d297ba7d054be9620bdf18d10558ac3d87e10bae",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "split": "train"
+    },
+    {
+      "path": "eairh/data_train_video/ea_short_AhNLgj4JHU4.mp4",
+      "label": "eairh",
+      "label_status": "uploader_labeled_candidate_accepted_for_experiment",
+      "label_basis": "Source caption describes cramps/gas and the sound Eair/Earggh. User requested adding this candidate.",
+      "source": "YTDown.com_Shorts_Decoding-baby-cries-newborn-babycries-ba_Media_AhNLgj4JHU4_001_1080p.mp4",
+      "source_group": "youtube_AhNLgj4JHU4",
+      "source_sha256": "794889adf2aa432823b6e95a8651a29438a7ee353ee68f583cd31d6872de842d",
+      "sha256": "4c211998461b1cb4b8618f7e43feda10f8db4e930689751382846c63b4e25094",
+      "start": 26.7,
+      "end": 30.7,
+      "crop": {
+        "x": 180,
+        "y": 420,
+        "width": 900,
+        "height": 900
+      },
+      "output_width": 720,
+      "output_height": 720,
+      "split": "train",
+      "audio_duration": 4.0,
+      "video_duration": 4.0,
+      "audio_start": 0.0,
+      "video_start": 0.0,
+      "checks": [
+        "Sampled crop frames contain no caption",
+        "Audio and video durations and start times match",
+        "Model preprocessing produces finite tensors"
+      ],
+      "limitations": "Label and original audio authenticity are not independently verified. Source group identifies the supplied upload, not a confirmed infant identity.",
+      "id": "ea_short_AhNLgj4JHU4"
+    },
+    {
+      "id": "ea_0004",
+      "shot": 6,
+      "start": 114.56,
+      "end": 116.44,
+      "path": "eairh/data_val_video/ea_0004.mp4",
+      "duration": 1.88,
+      "audio_rms": 0.060525745153427124,
+      "sha256": "0adfbfd69eb2b50e74242417221ef59c8e6b7dc05320bf99016d0c3854bdfb79",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "split": "val"
+    },
+    {
+      "id": "ea_0010",
+      "shot": 1,
+      "start": 73.6,
+      "end": 76.08,
+      "crop": "720:384:0:192",
+      "quality": "caption_removed_by_crop",
+      "path": "eairh/data_val_video/ea_0010.mp4",
+      "duration": 2.48,
+      "audio_rms": 0.05448141694068909,
+      "sha256": "5955cee0f57a741b1f0b582d58cfa214cfa8039ce9324935ee905af442ce7068",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "split": "val"
+    },
+    {
+      "id": "ea_0007",
+      "shot": 9,
+      "start": 133.36,
+      "end": 137.8,
+      "path": "eairh/data_test_video/ea_0007.mp4",
+      "duration": 4.44,
+      "audio_rms": 0.042620353400707245,
+      "sha256": "5ffd0185f8e87bbe993ba72877a4f4b92d0eddde449f7c1b4f9e5a8f3e10fe59",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "split": "test"
+    },
+    {
+      "id": "ea_0012",
+      "shot": 11,
+      "start": 146.36,
+      "end": 149.72,
+      "path": "eairh/data_test_video/ea_0012.mp4",
+      "duration": 3.36,
+      "audio_rms": 0.05059412866830826,
+      "sha256": "64cbed8f168ec86ff40daa9016e387bd24467933d1207ae9ff68f4de9af0b1b5",
+      "source_group": "dunstan_lesson_two_vts_01_1",
+      "label_status": "instructional_section_label",
+      "split": "test"
+    }
+  ]
+}

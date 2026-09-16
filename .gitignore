@@ -1,0 +1,7 @@
+.venv/
+.ipynb_checkpoints/
+*.keras
+model_mn2.ipynb
+hasil_mn2/
+kode/
+work/

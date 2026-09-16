@@ -1,0 +1,15 @@
+Test set (hasil final)
+
+              precision    recall  f1-score   support
+
+          eh     1.0000    1.0000    1.0000         7
+         heh     0.7778    1.0000    0.8750         7
+         neh     1.0000    0.7143    0.8333         7
+         owh     1.0000    1.0000    1.0000         7
+
+    accuracy                         0.9286        28
+   macro avg     0.9444    0.9286    0.9271        28
+weighted avg     0.9444    0.9286    0.9271        28
+
+Accuracy : 0.9286
+Macro F1 : 0.9271

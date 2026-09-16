@@ -1,4 +1,4 @@
-# Klasifikasi Tangisan Bayi — Intermediate Fusion (Citra + Audio, backbone ResNet50)
+# Klasifikasi Tangisan Bayi
 
 Model klasifikasi jenis tangisan bayi dari video, memakai pendekatan **intermediate / feature-level fusion**: cabang citra dan cabang audio masing-masing mengekstrak fitur, baru digabung sebelum classifier akhir.
 

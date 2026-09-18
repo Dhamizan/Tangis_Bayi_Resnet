@@ -15,3 +15,5 @@ best_model.keras
 hasil_resnet_8/
 hasil_resnet_64/
 Data_Video_Bayi/data_new.zip
+*.zip
+eairh/
